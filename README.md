@@ -34,6 +34,7 @@ By the end of the lab, you will need to provide at a minimum well documented mai
 * Multiple Blink
 * Button Blink
 * Off_Board Blink
+
 each with the .c and README files for each board. The .c file should correspond to the "Blinking LED by Button Polling" exercise as this is the end of the lab.
 
 ### README Files
@@ -46,6 +47,3 @@ You may find yourself by the end of this lab not having generated any header fil
 ## Documentation
 Since you will most likely be using pre-made code to make most of your code, so what I am going to require you to do is comment each line of code and what it is doing. If you are using code from TI themselves, it will most likely have some of the comments there. But I want you to use your own words when writing these comments. Dive into the datasheets, look into the MSP430.h file to see what registers are being manipulated and tell me why you need to configure them. 
 
-
-<a href="http://everycircuit.com/circuit/5180823226810368">LED Current - EveryCircuit</a><br>
-<iframe width="560" height="360" src="http://everycircuit.com/embed/5180823226810368" frameborder="0"></iframe>
