@@ -29,13 +29,13 @@ Since GITHUB likes to alphabetize files, you need to perform the exercises in th
 4. Off_Board Blink
 
 ## Deliverables
-By the end of the lab, you will need to provide at a minimum well documented main.c files for *EACH* of the 5 development platforms with accompanying README files which explain exactly how to implement your code. The reason I say minimum is because there are going to be some recommended further practice that is not mandatory, but heavily recommended, especially if you are finishing this lab in only a couple hours. So come Milestone time, I should see 5 folders in your repository with the following titles:
+By the end of the lab, you will need to provide at a minimum well documented main.c files for *EACH* of the 5 development platforms with accompanying README files which explain exactly how to implement your code. The reason I say minimum is because there are going to be some recommended further practice that is not mandatory, but heavily recommended, especially if you are finishing this lab in only a couple hours. So come Milestone time, I should see 4 folders in your repository with the following titles:
 * Simple Blink
 * Multiple Blink
 * Button Blink
 * Off_Board Blink
 
-each with the .c and README files for each board. The .c file should correspond to the "Blinking LED by Button Polling" exercise as this is the end of the lab.
+each with the .c and README files for each board. The .c and README files should include the minimum amount of work as well as any extra work that you have done. Each processor should have its project saved in its own folder in each part of the assignment, however you only need one README per part of the assignment.
 
 ### README Files
 Since most of these projects will have just a simple main.c file, you do not need to generate 20 README files. Instead, unless you go for a more advanced implementation of the exercises, you just need 1 README per exercise folder. "But how do I make a README with all of the processors included?" Well now we are getting somewhere. You should talk about the general form of your code as it should be very similar for each processor, but you should highlight what the differences are between each processor. For example, do the clocks need to be initialized differently? As another step forward, you could take that information and somehow make it where your code would work on any of the processors without the need to change it between projects.
