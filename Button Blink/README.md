@@ -1,21 +1,18 @@
 # Button Blink
-Now that you have looked at blinking the LED from some built in delay, but what if we wanted to control the state of the LED by a button? You may think "Why would I need a Microcontroller to perform the job of a switch?". And that is where you come in. The bare minimum for this part of the lab is to essentially replicate a switch with your development board.
+Note:  The follwing explantion will include the ButtonBlink functionality for all processors since the logic does not vary between the MSP430s.
 
-# YOU NEED TO CREATE THE FOLLOWING FOLDERS
-* MSP430G2553
-* MSP430F5529
-* MSP430FR2311
-* MSP430FR5994
-* MSP430FR6989
+## Explanation
+This portion required the implementation of the PxIN and PxREN registers. Since the button is identified as an input its direction had to be set to a 0 in the PxDIR register. Additionally, a pullup 
+resistor had to accompany the button using the PxREN register. This allowed the button to go back to a logic level of 1 after the button was depressed (Button is inverted). Once the direction had been set and 
+a pullup resistor was assigned to the button, the blink was accomplished by checking the value of PxIN with a conditional statement. For example, for the MSP430G2553, the button was on P1.3 (0x08). With this 
+information the P1IN register could be anded with 0x08 in order to see if the button was not pressed. If this condtional statement proved to be true then the button would be depressed and the LEDs would turn off.
+However, if it was false then that would indicated that the button was pressed and the LEDs would turn on. At the end of loop a for lopp was implemented to account for button bouncing
 
-## README
-Remember to replace this README with your README once you are ready to submit. I would recommend either making a copy of this file or taking a screen shot. There might be a copy of all of these README's in a folder on the top level depending on the exercise.
+## Color Change
+The following section was chosen as extra work for Lab2.
 
-## Extra Work
-What can we do to make this a little bit more worthy of needing a microcontroller.
-
-### Button Based Speed Control
-Much like the UART controlled speed, what if you could cycle between speeds based on a button press? The speed could progress through a cycle of "Off-Slow-Medium-Fast" looping back when you hit the end.
-
-### Color Change
-What if upon a button press, the LED which was blinking changed. Some of the development boards contain two LEDs, so you could swap between a Red and a Green LED.
+This portion was implemented simlarily to ButtonBlink. The main difference is that additional logic had to be used in order to identfy which LED was on. This was done by once again using the PxIN register to determine 
+when the button was pressed and depressed. If the button was not pressed then a varible called prevInState was set to a 1. This variable was then used in other if statements that were used to determine which LED was on. For
+example, if the green LED was on and prevInState =1 then the red LED would turn on, the green LED would turn off, and prevInState would be set to 0. The purpose of prevInState was to prevent the processor from executing the same line of 
+code during another iteration of the infinite while loop while the button was still pressed. Since the proccessor is able to process things at over a million times per second, the prevInState had
+to be used in order to prevent the LEDs from toggling multiple times while the button was pressed.
